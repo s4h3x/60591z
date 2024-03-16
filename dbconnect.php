@@ -7,7 +7,7 @@ if (file_exists(__DIR__."/.env"))
     $dotenv->load(); //все параметры окружения помещаются в массив $_ENV
 }
 try {
-    $conn = new PDO($_ENV['dbconnection'].":host=".$_ENV['dbhost'].";dbname=".$_ENV['dbname'].";charset=utf8mb4", $_ENV['dbuser'], $_ENV['dbpassword']);
+    $conn = new PDO($_ENV['dbconnection'].":host=".$_ENV['dbhost'].";dbname=".$_ENV['dbname'], $_ENV['dbuser'], $_ENV['dbpassword']);
     // set the PDO error mode to exception
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -16,3 +16,4 @@ catch(PDOException $e) {
     echo "Ошибка подключения к БД: " . $e->getMessage(), $e->getCode( );
     die();
 }
+echo "Подключение к БД ".$_ENV['dbname']." выполнено";
