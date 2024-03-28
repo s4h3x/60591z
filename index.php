@@ -16,11 +16,11 @@ switch ($_GET['page']){
         break;
     case 't':
         if (isset($_SESSION['login'])){
-            require "tasks.php";
-            require "taskform.php";
+            require "";
+            require "";
         }
         else{
-            $msg = 'Войдите в систему для просмотра и создания задач';
+            $msg = 'Войдите в систему для просмотра ***';
         }
         break;
 }
