@@ -1,12 +1,12 @@
 
 <?php
 //   $err_msg = '';
-session_start();
+
 global $conn;
 if (isset($_POST["login"]) and $_POST["login"]!='')
 {
     try {
-        $sql = 'SELECT ResidentID, FirstName, LastName, Password FROM public."Residents" WHERE PhoneNumber=(:login)';
+        $sql = 'SELECT "ResidentID", "FirstName", "LastName", "Password" FROM public."Residents" WHERE "PhoneNumber"=(:login)';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':login', $_POST['login']);
         $stmt->execute();
