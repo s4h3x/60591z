@@ -40,7 +40,7 @@ if (isset($_GET["logout"]))
 {
     $_SESSION = null;
     $_SESSION['msg'] =  "Вы успешно вышли из системы";
-    header('Location: /');
+    header('Location: /index.php?page=');
     exit( );
 }
 
