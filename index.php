@@ -8,7 +8,7 @@ echo '<main class="container" style="margin-top: 100px">';
 switch ($_GET['page']){
     case 'c':
         if (isset($_SESSION['login'])) {
-            require "categories.php";
+            require "Residents.php";
         }
         else{
             $msg = 'Войдите в систему для просмотра и создания категорий';

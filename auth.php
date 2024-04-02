@@ -6,7 +6,7 @@ global $conn;
 if (isset($_POST["login"]) and $_POST["login"]!='')
 {
     try {
-        $sql = 'SELECT "ResidentID", "FirstName", "LastName", "Password" FROM public."Residents" WHERE "PhoneNumber"=(:login)';
+        $sql = 'SELECT "UserID", "FirstName", "LastName", "PasswordMD5" FROM public."Users" WHERE "Login"=(:login)';
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':login', $_POST['login']);
         $stmt->execute();
@@ -20,14 +20,14 @@ if (isset($_POST["login"]) and $_POST["login"]!='')
     // если удалось получить строку с паролем из БД
     if ($row=$stmt->fetch(PDO::FETCH_LAZY))
     {
-        if (MD5($_POST["password"])!= $row['Password'])
+        if (MD5($_POST["password"])!= $row['PasswordMD5'])
             $msg = "Неправильный пароль!";
         else {
             // успешная аутентификация
             $_SESSION['login'] = $_POST["login"];
             $_SESSION['firstname'] = $row['FirstName'];
             $_SESSION['lastname'] = $row['LastName'];
-            $_SESSION['id'] = $row['ResidentID'];
+            $_SESSION['id'] = $row['UserID'];
             //if ($row['is_teacher']==1) $_SESSION['teacher'] = true;
             $msg =  "Вы успешно вошли в систему";
         }
