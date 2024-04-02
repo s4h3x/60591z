@@ -6,21 +6,21 @@ require "auth.php";
 require "menu.php";
 echo '<main class="container" style="margin-top: 100px">';
 switch ($_GET['page']){
-    case 'c':
+    case 'r':
         if (isset($_SESSION['login'])) {
             require "Residents.php";
         }
         else{
-            $msg = 'Войдите в систему для просмотра и создания категорий';
+            $msg = 'Войдите в систему для просмотра и создания заявок';
         }
         break;
-    case 't':
+    case 'p':
         if (isset($_SESSION['login'])){
             require "";
             require "";
         }
         else{
-            $msg = 'Войдите в систему для просмотра ***';
+            $msg = 'Войдите в систему для просмотра счетов';
         }
         break;
 }
