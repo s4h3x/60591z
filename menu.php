@@ -11,20 +11,20 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">IS ManagementC</a>
+            <a class="navbar-brand" href="#">ИС УправляющаяКомпания</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Главная</a>
+                        <a class="nav-link" href="index.php?page=req">Заявки жителей</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=r">Заявки жителей</a>
+                        <a class="nav-link" href="index.php?page=pay">Счета на оплату</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=p">Счета на оплату</a>
+                        <a class="nav-link" href="index.php?page=res">Жители</a>
                     </li>
                 </ul>
 
@@ -41,7 +41,7 @@
                     echo '</form>';
                 }
                 else {
-                    echo '<a class="nav-link" href="#">Привет, ' . $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] . '</a>';
+                    echo '<a class="nav-link" href="#">'. $_SESSION['firstname'] . ' ' . $_SESSION['lastname'] . '</a>';
                     echo '<a class="btn btn-outline-success my-2 my-sm-0" href="index.php?logout=1">Выйти</a>';
 
                 }
