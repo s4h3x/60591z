@@ -6,6 +6,14 @@ require "auth.php";
 require "menu.php";
 echo '<main class="container" style="margin-top: 100px">';
 switch ($_GET['page']){
+    case 'ser':
+        if (isset($_SESSION['login'])) {
+            require "Services.php";
+        }
+        else{
+            $msg = 'Войдите в систему для просмотра и создания заявок';
+        }
+        break;
     case 'req':
         if (isset($_SESSION['login'])) {
             require "Requests.php";
@@ -14,28 +22,10 @@ switch ($_GET['page']){
             $msg = 'Войдите в систему для просмотра и создания заявок';
         }
         break;
-    case 'pay':
-        if (isset($_SESSION['login'])){
-            require "PaymentInvoices.php";
-        }
-        else{
-            $msg = 'Войдите в систему для просмотра счетов';
-        }
-        break;
-    case 'res':
-        if (isset($_SESSION['login'])) {
-            require "Residents.php";
-        }
-        else{
-            $msg = 'Войдите в систему для просмотра списка проживающих';
-        }
-        break;
 }
 echo '</main>';
 
-if(($_SESSION['msg']!='') or isset($msg)) {
+if(isset($msg)) {
     require "message.php";
-    $_SESSION['msg']= '';
 }
-
 require "footer.php";

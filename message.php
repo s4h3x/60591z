@@ -2,7 +2,6 @@
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
-                <?php session_start(); if($_SESSION['msg']){echo $_SESSION['msg']; $_SESSION['msg']='';} ?>
                 <?php if (!empty($msg)) echo $msg ?>
             </div>
             <div class="modal-footer">

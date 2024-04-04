@@ -13,6 +13,7 @@ $result = $conn->query('SELECT * FROM public."Residents"');
 
 
 while ($row = $result->fetch()){
+
     ?>
 
 

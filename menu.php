@@ -11,20 +11,20 @@
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">ИС УправляющаяКомпания</a>
+            <a class="navbar-brand" href="#">ИС Управляющая Компания</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav me-auto mb-2 mb-md-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=req">Заявки жителей</a>
+                        <a class="nav-link active" href="index.php?page=">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=pay">Счета на оплату</a>
+                        <a class="nav-link" href="index.php?page=ser">Услуги</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?page=res">Жители</a>
+                        <a class="nav-link" href="index.php?page=req">Заявки</a>
                     </li>
                 </ul>
 
